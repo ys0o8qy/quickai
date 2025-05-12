@@ -1,6 +1,7 @@
 import Versions from './components/Versions'
 import electronLogo from './assets/electron.svg'
 import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 
 function App(): React.JSX.Element {
   const ipcHandle = (): void => window.electron.ipcRenderer.send('ping')
@@ -8,6 +9,7 @@ function App(): React.JSX.Element {
   return (
     <>
       <Button>Click me</Button>
+      <Input></Input>
       <img alt="logo" className="logo" src={electronLogo} />
       <div className="creator">Powered by electron-vite</div>
       <div className="text">
