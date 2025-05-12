@@ -10,7 +10,9 @@
     "composite": true,
     "jsx": "react-jsx",
     "baseUrl": ".",
+    "types": ["electron-vite/node"],
     "paths": {
+      "@/*": ["src/renderer/src/*"],
       "@renderer/*": [
         "src/renderer/src/*"
       ]
