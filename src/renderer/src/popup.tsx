@@ -2,10 +2,10 @@ import './assets/main.css'
 
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from '@/pages/App'
+import Popup from '@/pages/popup'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <Popup />
   </StrictMode>
 )

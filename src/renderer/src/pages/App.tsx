@@ -1,5 +1,5 @@
-import Versions from './components/Versions'
-import electronLogo from './assets/electron.svg'
+import Versions from '@/components/Versions'
+import electronLogo from '../assets/electron.svg'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 
