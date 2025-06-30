@@ -3,6 +3,7 @@ import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
 import icon from '../../resources/icon.png?asset'
 import { registerShortcuts } from './shotcuts'
+import server from './server'
 
 function createWindow(): void {
     // Create the browser window.
@@ -59,6 +60,10 @@ app.whenReady().then(() => {
         // On macOS it's common to re-create a window in the app when the
         // dock icon is clicked and there are no other windows open.
         if (BrowserWindow.getAllWindows().length === 0) createWindow()
+    })
+
+    server.listen(3001, () => {
+        console.log('Server is running on port 3001')
     })
 })
 
