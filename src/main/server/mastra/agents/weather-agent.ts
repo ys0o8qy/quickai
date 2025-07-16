@@ -1,11 +1,6 @@
 import { Agent } from '@mastra/core/agent'
 import { weatherTool } from '../tools/weather-tool'
-
-import { createOpenRouter } from '@openrouter/ai-sdk-provider'
-
-const openrouter = createOpenRouter({
-    apiKey: (import.meta.env as any).VITE_OPENROUTER_API_KEY
-})
+import { deepkseekChat } from '../providers'
 
 export const weatherAgent = new Agent({
     name: 'Weather Agent',
@@ -21,6 +16,6 @@ export const weatherAgent = new Agent({
  
       Use the weatherTool to fetch current weather data.
 `,
-    model: openrouter('deepseek/deepseek-chat-v3-0324:free'),
+    model: deepkseekChat,
     tools: { weatherTool }
 })
