@@ -1,20 +1,7 @@
-import Versions from '@/components/Versions'
-import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import Page from '@/components/use-chat-example'
+import { TestThread } from '@/components/TestThread'
 
 function App(): React.JSX.Element {
-    // const ipcHandle = (): void => window.electron.ipcRenderer.send('ping')
-
-    return (
-        <>
-            <Button>Click me</Button>
-            <Input></Input>
-            <Page></Page>
-
-            <Versions></Versions>
-        </>
-    )
+    return <TestThread />
 }
 
 export default App
