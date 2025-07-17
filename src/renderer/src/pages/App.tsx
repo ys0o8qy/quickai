@@ -1,19 +1,12 @@
-import Versions from '@/components/Versions'
+import { TestThread } from '@/components/TestThread'
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
-import Page from '@/components/use-chat-example'
 
 function App(): React.JSX.Element {
-    // const ipcHandle = (): void => window.electron.ipcRenderer.send('ping')
-
     return (
-        <>
+        <div className="h-full">
             <Button>Click me</Button>
-            <Input></Input>
-            <Page></Page>
-
-            <Versions></Versions>
-        </>
+            <TestThread />
+        </div>
     )
 }
 
