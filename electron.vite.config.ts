@@ -23,7 +23,10 @@ export default defineConfig({
     renderer: {
         build: {
             rollupOptions: {
-                input: resolve('src/index.html')
+                input: {
+                    input: resolve('src/index.html'),
+                    popup: resolve('src/popup.html')
+                }
             }
         },
         resolve: {
