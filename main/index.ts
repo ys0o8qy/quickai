@@ -1,9 +1,8 @@
 import { app, shell, BrowserWindow, ipcMain } from 'electron'
 import { join } from 'path'
 import { electronApp, optimizer, is } from '@electron-toolkit/utils'
-import icon from '../../resources/icon.png?asset'
+import icon from '../resources/icon.png?asset'
 import { registerShortcuts } from './utils/shotcuts'
-import server from './server'
 import { setCORS } from './utils/set-cors'
 
 function createWindow(): void {
@@ -36,7 +35,7 @@ function createWindow(): void {
     if (is.dev && process.env['ELECTRON_RENDERER_URL']) {
         mainWindow.loadURL(process.env['ELECTRON_RENDERER_URL'])
     } else {
-        mainWindow.loadFile(join(__dirname, '../renderer/index.html'))
+        mainWindow.loadFile(join(__dirname, '../src/index.html'))
     }
 }
 
@@ -65,9 +64,6 @@ app.whenReady().then(() => {
         if (BrowserWindow.getAllWindows().length === 0) createWindow()
     })
 
-    server.listen(3001, () => {
-        console.log('Server is running on port 3001')
-    })
 })
 
 // Quit when all windows are closed, except on macOS. There, it's common
