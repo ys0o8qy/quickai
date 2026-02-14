@@ -21,17 +21,18 @@ export default defineConfig({
         }
     },
     renderer: {
+        root: 'src',
         build: {
             rollupOptions: {
                 input: {
-                    input: resolve('src/index.html'),
-                    popup: resolve('src/popup.html')
+                    main: resolve(__dirname, 'src/index.html'),
+                    popup: resolve(__dirname, 'src/popup.html')
                 }
             }
         },
         resolve: {
             alias: {
-                '@': resolve('src')
+                '@': resolve(__dirname, 'src')
             }
         },
         plugins: [react(), tailwindcss()]
